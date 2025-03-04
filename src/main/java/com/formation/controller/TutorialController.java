@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.formation.model.Tutorial;
 import com.formation.repository.TutorialRepository;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api")
 public class TutorialController {
@@ -54,7 +54,7 @@ public class TutorialController {
       return ResponseEntity.ok(tutorial);
     } catch (Exception e) {
       return ResponseEntity.status(500).build();
-    } 
+    }
   }
 
   @PostMapping("/tutorials")
@@ -115,5 +115,5 @@ public class TutorialController {
       return ResponseEntity.status(500).build();
     }
   }
-    
+
 }
